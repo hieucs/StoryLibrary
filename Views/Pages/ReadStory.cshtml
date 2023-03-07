@@ -1,0 +1,168 @@
+﻿@using StoryLibrary.Model;
+@using StoryLibrary.Views.Pages;
+@using StoryLibrary.Views.Component;
+
+@model StoryLibrary.Views.Pages.ReadStoryModel
+@{
+    ViewData["Title"] = Model.TitleTruyen + " - " + Model.ChapterName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["TitlePage"] = Model.ChapterName;
+    ViewData["TitlePageBread1"] = Model.TitleTruyen;
+    ViewData["TitlePageBread2"] = Model.ChapterName;
+    
+}
+@section Header
+{
+    <meta name="description" content="Truyện @Model.TitleTruyen - @Model.ChapterName">
+    <meta name="keywords" content="@Model.TitleTruyen, @Model.Alias, @Model.ChapterName">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="robots" content="index,follow">
+}
+@{
+    var ChapterPage = 1;
+
+}
+<div class="col-lg-12">
+    <div class="iq-card iq-card-block iq-card-stretch iq-card-height iq-mb-3">
+        <div class="iq-card-body">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+
+                    <li class="page-item ">
+                        <a class="page-link">Trang trước</a>
+                    </li>
+                    <li class="page-item">
+                        <button type="button" class="page-link" data-toggle="modal" id="buttonchapter" data-target="#exampleModalScrollable">
+                            Chương
+                        </button>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link">Tiếp theo</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="iq-card-body">
+            <h4 class="card-title text-center">@Html.Raw( @Model.ChapterName)</h4>
+            <p class="card-text">@Html.Raw( @Model.Detail)</p>
+        </div>
+        <div class="iq-card-body">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item ">
+                        <a class="page-link">Trang trước</a>
+                    </li>
+                    <li class="page-item">
+                        <button type="button" class="page-link" data-toggle="modal" id="buttonchapter" data-target="#exampleModalScrollable">
+                            Chương
+                        </button>
+                        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Danh sách chương</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" id="modalbody">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination justify-content-center">
+                                                <li class="page-item ">
+                                                    <button type="button" class="page-link" id="prevpageChapter">Trang trước</button>
+                                                </li>
+                                                <li class="page-item">
+                                                    <button type="button" class="page-link" id="nextpageChapter">Tiếp theo</button>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link">Tiếp theo</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    document.getElementById("buttonchapter").addEventListener("click", function () {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                var html = "<div class='list-group'>";
+                for (var i = 0; i < response.length; i++) {
+                    html += "<a class='list-group-item list-group-item-action' href='/Pages/ReadStory/" + @Model.IDTruyen+"-" + response[i].idChapter + "'>" + response[i].name + "</a>";
+
+                }
+                html += " </div>";
+                document.getElementById("modalbody").innerHTML = html;
+                idchapter = 2
+                prevpagechapter = 0;
+            }
+        };
+        xhr.open("GET", "/Pages/LoadChapterList?IDTruyen=" + @Model.IDTruyen+"&Page=" + @ChapterPage);
+        xhr.send();
+    });
+
+</script>
+<script>
+    var idchapter = 2;
+    var prevpagechapter = 0;
+    var totalPage = 0;
+    document.getElementById("nextpageChapter").addEventListener("click", function () {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                var html = "<div class='list-group'>";
+                for (var i = 0; i < response.length; i++) {
+                    html += "<a class='list-group-item list-group-item-action' href='/Pages/ReadStory/" + @Model.IDTruyen+"-" + response[i].idChapter + "'>" + response[i].name + "</a>";
+                    totalPage = response[i].totalchapterPageCount;
+                }
+                html += " </div>";
+                document.getElementById("modalbody").innerHTML = html;
+                document.getElementById("modalbody").scrollTop = 0;
+                prevpagechapter = idchapter - 1;
+                idchapter = idchapter + 1;
+                if (idchapter > totalPage) {
+                    idchapter = totalPage;
+                }
+            }
+        };
+        xhr.open("GET", "/Pages/LoadChapterList?IDTruyen=" + @Model.IDTruyen+"&Page=" + idchapter);
+        xhr.send();
+    });
+    document.getElementById("prevpageChapter").addEventListener("click", function () {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                var html = "<div class='list-group'>";
+                for (var i = 0; i < response.length; i++) {
+                    html += "<a class='list-group-item list-group-item-action' href='/Pages/ReadStory/" + @Model.IDTruyen+"-" + response[i].idChapter + "'>" + response[i].name + "</a>";
+                    console.log(response[i]);
+                }
+                html += " </div>";
+                document.getElementById("modalbody").innerHTML = html;
+                document.getElementById("modalbody").scrollTop = 0;
+                idchapter = prevpagechapter + 1;
+                prevpagechapter = prevpagechapter - 1;
+                if (prevpagechapter === 0) {
+                    prevpagechapter = 1;
+                }
+            }
+        };
+        xhr.open("GET", "/Pages/LoadChapterList?IDTruyen=" + @Model.IDTruyen+"&Page=" + prevpagechapter);
+        xhr.send();
+    });
+</script>

@@ -1,0 +1,67 @@
+﻿@using StoryLibrary.Views.Pages;
+
+@model StoryLibrary.Views.Pages.CategoryModel
+@{
+    ViewData["Title"] = Model.Category;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["TitlePage"] = Model.Category;
+}
+<div class="col-lg-12">
+    <div class="iq-card-transparent mb-0">
+        <div class="d-block text-center">
+            <h2 class="mb-3">@Model.Category</h2>
+
+        </div>
+    </div>
+    <div class="iq-card">
+        <div class="iq-card-body">
+            <div class="row">
+                @foreach (var item in Model.CatList)
+                {
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="iq-card iq-card-block iq-card-stretch iq-card-height search-bookcontent">
+                            <div class="iq-card-body p-0">
+                                <div class="d-flex align-items-center">
+                                    <div class="col-6 p-0 position-relative image-overlap-shadow">
+                                        <a href="javascript:void();"><img class="img-fluid rounded w-100" src="@item.LinkImageCover" alt="@item.Title"></a>
+                                        <div class="view-book">
+                                            <a asp-controller="Pages" asp-action="Story" asp-route-id="@item.Alias-@item.IDTruyen" class="btn btn-sm btn-white">Đọc truyện</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="mb-2">
+                                            <h6 class="mb-1">@item.Title</h6>
+                                            <p class="font-size-13 line-height mb-1">@item.Author</p>
+                                            <div class="d-block">
+                                                <span class="font-size-13 text-warning">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+
+        <li class="page-item @Model.disablePrev">
+            <a class="page-link" asp-controller="Pages" asp-action="Category" asp-route-id="@Model.Alias-@Model.PrevPage">Trang trước</a>
+        </li>
+        <li class="page-item @Model.disableNext">
+            <a class="page-link" asp-controller="Pages" asp-action="Category" asp-route-id="@Model.Alias-@Model.NextPage">Tiếp theo</a>
+        </li>
+
+
+    </ul>
+</nav>
