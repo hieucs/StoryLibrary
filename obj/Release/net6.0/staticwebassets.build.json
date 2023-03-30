@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vGcVqDvbZYt+Nltclak8U8d14HtbroYgP8oQNtO978c=",
+  "Hash": "gjAyis/VnlarHHzy3JT5L2G9a8+5+h+pq2Newx998x8=",
   "Source": "StoryLibrary",
   "BasePath": "_content/StoryLibrary",
   "Mode": "Default",
@@ -2225,6 +2225,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\dataTables.bootstrap4.min.js"
+    },
+    {
+      "Identity": "D:\\My Project\\StoryLibrary\\wwwroot\\js\\DB.js",
+      "SourceId": "StoryLibrary",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\My Project\\StoryLibrary\\wwwroot\\",
+      "BasePath": "_content/StoryLibrary",
+      "RelativePath": "js/DB.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\DB.js"
     },
     {
       "Identity": "D:\\My Project\\StoryLibrary\\wwwroot\\js\\flatpickr.js",

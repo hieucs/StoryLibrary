@@ -2,7 +2,8 @@
 @using StoryLibrary.Views.Shared;
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="--iq-primary:rgb(160, 116, 107); --iq-light-primary:rgba(160, 116, 107,0.1); --iq-primary-hover:rgba(160, 116, 107,0.8);">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,9 +23,22 @@
     <link rel="stylesheet" href="/css/style.css">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="/css/responsive.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2564781900515882"
+            crossorigin="anonymous"></script>
 </head>
 
 <body>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6JR5MY87BC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-6JR5MY87BC');
+    </script>
+
     @*<component type="typeof(Loading)" render-mode="Static"></component>*@
 
     <div class="wrapper">
@@ -43,6 +57,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6">
+                    <a asp-controller="Pages" asp-action="Privacy">Privacy Policy</a>
                 </div>
                 <div class="col-lg-6 text-right">
                     Copyright 2023 <a href="#">Đại Đạo Viện</a>
@@ -50,8 +65,8 @@
             </div>
         </div>
     </footer>
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v16.0&appId=1387477262001745&autoLogAppEvents=1" nonce="lKUecG0c"></script>
+    @*<div id="fb-root"></div>*@
+    @*<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v16.0&appId=1387477262001745&autoLogAppEvents=1" nonce="lKUecG0c"></script>*@
     <script src="/lib/jquery/dist/jquery.min.js"></script>
     <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/site.js" asp-append-version="true"></script>

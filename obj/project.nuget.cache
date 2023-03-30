@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XPEauR9JxXz5d9P5MBm0+AwOoexlGbS62kR6uHZreWhIBTzinQtqUL4PVAAibzi5plzqfkAvGUSyREYW9RQWHQ==",
+  "dgSpecHash": "YMeNJ3WUdQj/HyY435iCxeRyXqrXHIWbkHUMgXXz5Z4dA4D13WJR1g3ac0sklu589ivfNFRmVVlw1Og3PapRPA==",
   "success": true,
   "projectFilePath": "D:\\My Project\\StoryLibrary\\StoryLibrary.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\hieu__000\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\hieu__000\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\hieu__000\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
+    "C:\\Users\\hieu__000\\.nuget\\packages\\microsoft.aspnetcore.authentication.facebook\\6.0.14\\microsoft.aspnetcore.authentication.facebook.6.0.14.nupkg.sha512",
     "C:\\Users\\hieu__000\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.0\\microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
     "C:\\Users\\hieu__000\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "C:\\Users\\hieu__000\\.nuget\\packages\\microsoft.build\\17.3.2\\microsoft.build.17.3.2.nupkg.sha512",

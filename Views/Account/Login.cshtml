@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="sign-in-from bg-primary rounded">
+    <h3 class="mb-0 text-center text-white">Đạo hữu xin dừng bước.</h3>
+    <p class="text-center text-white">Nhập địa chỉ Email và mật khẩu để đăng nhập</p>
+    <form class="mt-4 form-text">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="email" class="form-control mb-0 text-black" id="exampleInputEmail1">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Mật khẩu</label>
+            <a href="#" class="float-right text-white">Quên mật khẩu?</a>
+            <input type="password" class="form-control mb-0 text-black" id="exampleInputPassword1">
+        </div>
+        <div class="d-inline-block w-100">
+            <div class="custom-control custom-checkbox d-inline-block mt-2 pt-1">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label text-white" for="customCheck1">Ghi nhớ đăng nhập</label>
+            </div>
+        </div>
+        <div class="sign-info text-center">
+            <button type="submit"   class="btn btn-white d-block w-100 mb-2">Đăng nhập</button>
+            <span class="text-dark dark-color d-inline-block line-height-2 text-white">Đạo hữu chưa có tài khoản ? <a asp-controller="Account" asp-action="Signup" class="text-white">Đăng ký ngay nhé !</a></span>
+        </div>
+    </form>
+</div>

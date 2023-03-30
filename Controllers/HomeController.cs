@@ -18,9 +18,12 @@ namespace StoryLibrary.Controllers
 
         private IndexModel LoadData()
         {
-            List<Model.Item> Lasted = API.SliderGet();
+            List<Model.Item> Lasted = API.TruyenMoiCapNhatGet();
+            List<Model.Item> Hot = API.TruyenHotGet();
             var indexmodel = new IndexModel();
             indexmodel.Lasted = Lasted;
+            indexmodel.Hot = Hot.FirstOrDefault();
+            indexmodel.ListHot = Hot;
             return indexmodel;
         }
         

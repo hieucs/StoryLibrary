@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Facebook;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +8,14 @@ builder.Services.AddRazorPages();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+var configuration = builder.Configuration;
+var services = builder.Services;
+
+services.AddAuthentication().AddFacebook(facebookOptions =>
+{
+    facebookOptions.AppId = configuration["Authentication:Facebook:AppId"];
+    facebookOptions.AppSecret = configuration["Authentication:Facebook:AppSecret"];
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -25,6 +36,7 @@ app.MapControllerRoute(
 
 
 
+
 app.MapControllerRoute(
     name: "story",
     pattern: "story/{alias}",
@@ -35,5 +47,6 @@ app.MapControllerRoute(
     name: "cat",
     pattern: "category/{alias}",
     defaults: new { controller = "Pages", action = "Category" });
+
 
 app.Run();

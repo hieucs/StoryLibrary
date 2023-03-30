@@ -35,9 +35,20 @@
     {
         public List<Item> Slider { get; set; }
     }
+    public class ListTruyenMoiCapNhat
+    {
+        public List<Item> TruyenMoiCapNhat { get; set; }
+    }
+    public class ListTruyenHot
+    {
+        public List<Item> TruyenHot { get; set; }
+    }
+
     public class ListItem
     {
         public List<Item> Item { get; set; }
+        public List<Item> Similar { get; set; }
+        public List<Item> Random { get; set; }
     }
     public class ListChapterParam
     {
@@ -101,5 +112,25 @@
     public class ListChapter
     {
         public List<Chapter> Chapters { get; set; }
+    }
+    public class AuthResponse
+    {
+        public string accessToken { get; set; }
+        public string expiresIn { get; set; }
+        public string reauthorize_required_in { get; set; }
+        public string signedRequest { get; set; }
+        public string userID { get; set; }
+    }
+
+    public class FacebookResult
+    {
+        public string status { get; set; }
+        public AuthResponse authResponse { get; set; }
+    }
+    public class UserSignup
+    {
+        public string Email { get; set; }
+        public string Pass { get; set; }
+        public string FullName { get; set; }
     }
 }

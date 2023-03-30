@@ -7,7 +7,7 @@
 
 <div class="iq-sidebar">
     <div class="iq-sidebar-logo d-flex justify-content-between">
-        <a href="" class="header-logo">
+        <a asp-controller="Home" asp-action="Index" asp-route-id="" class="header-logo">
             <img src="images/logo.png" class="img-fluid rounded-normal" alt="">
             <div class="logo-title">
                 <span class="text-primary text-uppercase">Đại Đạo Viện</span>
@@ -29,15 +29,25 @@
                     <li>
                         @if (item.IDParent == "0")
                         {
-                            <a href="#@item.ClassID" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false">
-                                <span class="ripple rippleEffect"></span>
-                                <i class="@item.ClassCSS iq-arrow-left"></i>
-                                <span> @item.Name </span>
-                                @if (item.HasChild)
-                                {
-                                    <i class="ri-arrow-right-s-line iq-arrow-right"></i>
-                                }
-                            </a>
+                            if (item.Name == "Trang chủ")
+                            {
+                                <a asp-controller="Home" asp-action="Index" asp-route-id="" class="iq-waves-effect">
+                                    <i class="">@item.Name</i>
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="#@item.ClassID" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false">
+                                    <span class="ripple rippleEffect"></span>
+                                    <i class="@item.ClassCSS iq-arrow-left"></i>
+                                    <span> @item.Name </span>
+                                    @if (item.HasChild)
+                                    {
+                                        <i class="ri-arrow-right-s-line iq-arrow-right"></i>
+                                    }
+                                </a>
+                            }
+
                             @if (item.HasChild)
                             {
                                 <ul id="@item.ClassID" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
@@ -70,7 +80,7 @@
                     <div class="main-circle"><i class="las la-bars"></i></div>
                 </div>
                 <div class="iq-navbar-logo d-flex justify-content-between">
-                    <a href="/" class="header-logo">
+                    <a asp-controller="Home" asp-action="Index" asp-route-id="" class="header-logo">
                         <img src="images/logo.png" class="img-fluid rounded-normal" alt="">
                         <div class="logo-title">
                             <span class="text-primary text-uppercase">Đại Đạo Viện</span>
@@ -87,9 +97,10 @@
                     </ul>
                 </nav>
             </div>
+            @* <a asp-controller="Account" asp-action="Login">Login</a>*@
             <div class="iq-search-bar">
                 <form action="#" class="searchbox">
-                    <input type="text" class="text search-input" placeholder="Search Here...">
+                    <input type="text" class="text search-input" placeholder="Tìm kiếm...">
                     <a class="search-link" href="#"><i class="ri-search-line"></i></a>
                 </form>
             </div>

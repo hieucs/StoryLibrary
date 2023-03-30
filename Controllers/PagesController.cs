@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.JSInterop;
 using Newtonsoft.Json;
 using StoryLibrary.DB;
 using StoryLibrary.Model;
@@ -49,6 +50,8 @@ namespace StoryLibrary.Controllers
             Model.ListItem Story = API.ItemGet(Id.Last());
             var Storymodel = new StoryModel();
             Storymodel.Story = Story.Item[0];
+            Storymodel.Similar = Story.Similar;
+            Storymodel.Random = Story.Random;
             return View("Story", Storymodel);
         }
         public IActionResult ReadStory(string id)
@@ -69,6 +72,23 @@ namespace StoryLibrary.Controllers
         {
             var result = API.ChapterListGet(new ListChapterParam { ID = IDTruyen, Page = Page });
             return Json(result);
+        }
+        public IActionResult Login()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Account(string result)
+        {
+            var model = new Account();
+            // model.Name = JsonConvert.DeserializeObject<FacebookResult>(result).authResponse.userID;
+            return View("Account", model);
+        }
+
+        public IActionResult Privacy()
+        {
+            return View("Privacy");
         }
     }
 }

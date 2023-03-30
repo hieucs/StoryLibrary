@@ -254,6 +254,7 @@ D:\My Project\StoryLibrary\bin\Debug\net6.0\HtmlAgilityPack.dll
 D:\My Project\StoryLibrary\bin\Debug\net6.0\Humanizer.dll
 D:\My Project\StoryLibrary\bin\Debug\net6.0\MessagePack.dll
 D:\My Project\StoryLibrary\bin\Debug\net6.0\MessagePack.Annotations.dll
+D:\My Project\StoryLibrary\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Facebook.dll
 D:\My Project\StoryLibrary\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
 D:\My Project\StoryLibrary\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\My Project\StoryLibrary\bin\Debug\net6.0\Microsoft.Build.dll

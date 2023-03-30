@@ -477,6 +477,10 @@
       "PackagePath": "staticwebassets\\images\\logo.png"
     },
     {
+      "Id": "D:\\My Project\\StoryLibrary\\wwwroot\\js\\DB.js",
+      "PackagePath": "staticwebassets\\js\\DB.js"
+    },
+    {
       "Id": "D:\\My Project\\StoryLibrary\\wwwroot\\js\\algoliasearchLite.min.js",
       "PackagePath": "staticwebassets\\js\\algoliasearchLite.min.js"
     },

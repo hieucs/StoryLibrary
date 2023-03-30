@@ -95,7 +95,7 @@ namespace StoryLibrary.DB
                 using (var streamReader = new StreamReader(responsebody.GetResponseStream()))
                 {
                     var result = streamReader.ReadToEnd();
-                    return JsonConvert.DeserializeObject<Sliders>(result).Slider;
+                    return JsonConvert.DeserializeObject<ListTruyenHot>(result).TruyenHot;
                 }
             }
             catch (Exception exx)
@@ -127,7 +127,7 @@ namespace StoryLibrary.DB
                 using (var streamReader = new StreamReader(responsebody.GetResponseStream()))
                 {
                     var result = streamReader.ReadToEnd();
-                    return JsonConvert.DeserializeObject<Sliders>(result).Slider;
+                    return JsonConvert.DeserializeObject<ListTruyenMoiCapNhat>(result).TruyenMoiCapNhat;
                 }
             }
             catch (Exception exx)
@@ -146,6 +146,38 @@ namespace StoryLibrary.DB
             httpWebRequest.Headers.Add("Accept-Language", "vi");
 
             string json = "{\"ID\":\"" + ID + "\"}";
+
+            using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+            {
+                streamWriter.Write(json);
+                streamWriter.Flush();
+                streamWriter.Close();
+            }
+            try
+            {
+                var responsebody = (HttpWebResponse)httpWebRequest.GetResponse();
+                using (var streamReader = new StreamReader(responsebody.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+                    return JsonConvert.DeserializeObject<ListItem>(result);
+                }
+            }
+            catch (Exception exx)
+            {
+                return list;
+            }
+            return list;
+        }
+        public static ListItem Item_Search(string value)
+        {
+            var list = new ListItem();
+
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.hhtruyen.com/api/app/Search");
+            httpWebRequest.ContentType = "application/json";
+            httpWebRequest.Method = "POST";
+            httpWebRequest.Headers.Add("Accept-Language", "vi");
+
+            string json = "{\"Value\":\"" + value + "\"}";
 
             using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
             {

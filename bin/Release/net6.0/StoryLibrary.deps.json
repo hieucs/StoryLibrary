@@ -9,6 +9,7 @@
       "StoryLibrary/1.0.0": {
         "dependencies": {
           "HtmlAgilityPack": "1.11.46",
+          "Microsoft.AspNetCore.Authentication.Facebook": "6.0.14",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.12",
           "Newtonsoft.Json": "13.0.2"
         },
@@ -61,6 +62,14 @@
         }
       },
       "MessagePackAnalyzer/2.1.152": {},
+      "Microsoft.AspNetCore.Authentication.Facebook/6.0.14": {
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.Facebook.dll": {
+            "assemblyVersion": "6.0.14.0",
+            "fileVersion": "6.0.1423.7403"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Razor.Language/6.0.0": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll": {
@@ -2065,6 +2074,13 @@
       "sha512": "sha512-uJhZlGMkXDaFYsH8V9S6o1EyvsUqB9mpU4DVBXNr0DXZVzZMhuLP1IkLj5xK3EKlaAcvkFkZv3eSvuz360wb3Q==",
       "path": "messagepackanalyzer/2.1.152",
       "hashPath": "messagepackanalyzer.2.1.152.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Facebook/6.0.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ItuVFbLZ5skk1YuCUUX7XkPM1L1LEFSG6LUUt+/xl7Uyz7xPevV5jRyNl607Y47LPJ6Iibq2tMPwsau5gbbNWw==",
+      "path": "microsoft.aspnetcore.authentication.facebook/6.0.14",
+      "hashPath": "microsoft.aspnetcore.authentication.facebook.6.0.14.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Razor.Language/6.0.0": {
       "type": "package",
