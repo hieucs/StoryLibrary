@@ -54,7 +54,7 @@
                         <a class="page-link">Trang trước</a>
                     </li>
                     <li class="page-item">
-                        <button type="button" class="page-link" data-toggle="modal" id="buttonchapter" data-target="#exampleModalScrollable">
+                        <button type="button" class="page-link" data-toggle="modal" id="buttonchapter2" data-target="#exampleModalScrollable">
                             Chương
                         </button>
                         <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -95,6 +95,26 @@
 
 
 <script>
+     document.getElementById("buttonchapter2").addEventListener("click", function () {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                var html = "<div class='list-group'>";
+                for (var i = 0; i < response.length; i++) {
+                    html += "<a class='list-group-item list-group-item-action' href='/Pages/ReadStory/" + @Model.IDTruyen+"-" + response[i].idChapter + "'>" + response[i].name + "</a>";
+
+                }
+                html += " </div>";
+                document.getElementById("modalbody").innerHTML = html;
+                idchapter = 2
+                prevpagechapter = 0;
+            }
+        };
+        xhr.open("GET", "/Pages/LoadChapterList?IDTruyen=" + @Model.IDTruyen+"&Page=" + @ChapterPage);
+        xhr.send();
+    });
+
     document.getElementById("buttonchapter").addEventListener("click", function () {
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function () {
