@@ -245,3 +245,4 @@ D:\My Project\StoryLibrary\obj\Release\net6.0\StoryLibrary.genruntimeconfig.cach
 D:\My Project\StoryLibrary\obj\Release\net6.0\ref\StoryLibrary.dll
 D:\My Project\StoryLibrary\bin\Release\net6.0\HtmlAgilityPack.dll
 D:\My Project\StoryLibrary\bin\Release\net6.0\Microsoft.AspNetCore.Authentication.Facebook.dll
+D:\My Project\StoryLibrary\obj\Release\net6.0\StoryLibrary.sourcelink.json

@@ -12,7 +12,7 @@ namespace StoryLibrary.DB
         {
             var list = new List<MenuItem>();
 
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.hhtruyen.com/api/app/menuget");
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.daidaovien.com/api/app/menuget");
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "POST";
             httpWebRequest.Headers.Add("Accept-Language", "vi");
@@ -44,7 +44,7 @@ namespace StoryLibrary.DB
         {
             var list = new List<Item>();
 
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.hhtruyen.com/api/app/SliderGet");
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.daidaovien.com/api/app/SliderGet");
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "POST";
             httpWebRequest.Headers.Add("Accept-Language", "vi");
@@ -76,7 +76,7 @@ namespace StoryLibrary.DB
         {
             var list = new List<Item>();
 
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.hhtruyen.com/api/app/TruyenHotGet");
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.daidaovien.com/api/app/TruyenHotGet");
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "POST";
             httpWebRequest.Headers.Add("Accept-Language", "vi");
@@ -108,7 +108,7 @@ namespace StoryLibrary.DB
         {
             var list = new List<Item>();
 
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.hhtruyen.com/api/app/TruyenMoiCapNhatGet");
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.daidaovien.com/api/app/TruyenMoiCapNhatGet");
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "POST";
             httpWebRequest.Headers.Add("Accept-Language", "vi");
@@ -140,7 +140,7 @@ namespace StoryLibrary.DB
         {
             var list = new ListItem();
 
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.hhtruyen.com/api/app/ItemGet");
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.daidaovien.com/api/app/ItemGet");
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "POST";
             httpWebRequest.Headers.Add("Accept-Language", "vi");
@@ -172,7 +172,7 @@ namespace StoryLibrary.DB
         {
             var list = new ListItem();
 
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.hhtruyen.com/api/app/Search");
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.daidaovien.com/api/app/Search");
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "POST";
             httpWebRequest.Headers.Add("Accept-Language", "vi");
@@ -205,7 +205,7 @@ namespace StoryLibrary.DB
         {
             var list = new CatetoryResult();
 
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.hhtruyen.com/api/app/CategoryGetByAlias");
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.daidaovien.com/api/app/CategoryGetByAlias");
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "POST";
             httpWebRequest.Headers.Add("Accept-Language", "vi");
@@ -238,7 +238,7 @@ namespace StoryLibrary.DB
         {
             var chapter = new Chapter();
 
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.hhtruyen.com/api/app/ChapterGet");
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.daidaovien.com/api/app/ChapterGet");
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "POST";
             httpWebRequest.Headers.Add("Accept-Language", "vi");
@@ -280,7 +280,7 @@ namespace StoryLibrary.DB
         {
             var chapters = new List<Chapter>();
 
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.hhtruyen.com/api/app/ChapterList");
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.daidaovien.com/api/app/ChapterList");
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "POST";
             httpWebRequest.Headers.Add("Accept-Language", "vi");
